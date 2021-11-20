@@ -9,6 +9,7 @@ import { makeStyles } from "@mui/styles";
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
+import SearchBar from "material-ui-search-bar";
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -28,7 +29,12 @@ const useStyles = makeStyles({
     padding: '0px',
     '& .css-1e6y48t-MuiButtonBase-root-MuiButton-root.Mui-disabled' :{
       color: '#FFFFFF'
-    }
+    },
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignContent: 'center',
+    alignItems: 'center'
   },
   newBtn: {
     background: '#515151 0% 0% no-repeat padding-box',
@@ -55,7 +61,7 @@ const useStyles = makeStyles({
   mainSection:{
     borderRadius: '12px',
     border: '1px solid grey ',
-    height: '80px',
+    flexGrow: 1,
     width: '85%',
     margin: 'auto'
   }
@@ -73,20 +79,23 @@ const ClinicsPage = () => {
     "asdn skvmksdv kfmbdb 1",
     "section 1",
     "subsection 1",
-    ""
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Birds_www.photo.org.es-30.jpg/360px-Birds_www.photo.org.es-30.jpg"
   );
   return (
     <Box sx={{ flexGrow: 1, backgroundColor: '#F3F3F3 ' }}>
-      <Grid container justifyContent="between" alignItems="center" >
+      <Grid container justifyContent="between"  >
         <Grid item xs={9}>
-            <Grid container justifyContent="center" alignItems="center" spacing={1}>
-                <Grid item xs={6} sm={3} md={3} lg={3}>
+            <Grid container justifyContent="space-evenly" alignItems="center" spacing={1}>
+                <Grid  item xs={12} sx={{margin: 'auto'}}>
+                  <SearchBar style={{borderRadius: '22px', boxShadow: '0px 3px 6px #00000029', marginLeft: '10px', marginRight: '10px', marginTop: '10px'}}/>
+                </Grid>
+                <Grid item xs={6} sm={4} md={4} lg={4} sx={{margin: 'auto'}}>
                   <ClinicCard clinic={clinic} />
                 </Grid>
-                <Grid item xs={6} sm={3} md={3} lg={3}>
+                <Grid item xs={6} sm={4} md={4} lg={4} sx={{margin: 'auto'}}>
                   <ClinicCard clinic={clinic} />
                 </Grid>
-                <Grid item xs={6} sm={3} md={3} lg={3}>
+                <Grid item xs={6} sm={4} md={4} lg={4} sx={{margin: 'auto'}}>
                   <ClinicCard clinic={clinic} />
                 </Grid>
             </Grid>
@@ -122,7 +131,7 @@ const ClinicsPage = () => {
                     />
                   </Button>
 
-                  <Button variant="contained" sx={{width: '85%', marginTop: '10px', color:'#FFFFFF', backgroundColor: '#3EC955', borderRadius: '12px'}}>
+                  <Button variant="contained" sx={{width: '85%', marginTop: '10px', color:'#FFFFFF', backgroundColor: '#3EC955', borderRadius: '12px', marginBottom: '5px'}}>
                     Add
                   </Button>
             </Item>

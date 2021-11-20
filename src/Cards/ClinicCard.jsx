@@ -7,13 +7,14 @@ import { CardActionArea } from '@mui/material';
 
 export default function ClinicCard({clinic}) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
+    <Card sx={{ maxWidth: 345, borderRadius: '27px !important', margin: 'auto', height: '350px' }} >
+      <CardActionArea sx={{height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
         <CardMedia
           component="img"
-          height="140"
+          height="200px"
           image= {clinic.imgUrl}
           alt="clinic"
+           sx={{flexGrow: 1}}
         />
         <CardContent  style={{textAlign: "center"}}>
           <Typography gutterBottom variant="h5" component="div">
